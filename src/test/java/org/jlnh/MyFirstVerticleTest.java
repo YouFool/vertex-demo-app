@@ -18,6 +18,7 @@ import java.net.ServerSocket;
 public class MyFirstVerticleTest {
 
     private Vertx vertx;
+
     private int port = 8081;
 
     @Before

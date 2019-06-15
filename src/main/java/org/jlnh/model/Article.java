@@ -1,31 +1,42 @@
 package org.jlnh.model;
 
-import java.util.concurrent.atomic.AtomicInteger;
+import io.vertx.core.json.JsonObject;
 
 /**
  * Represents an Article
  */
 public class Article {
 
-    private static final AtomicInteger COUNTER = new AtomicInteger();
 
-    private final int id;
+    private long id = -1;
 
     private String title;
 
     private String url;
 
     public Article(String title, String url) {
-        this.id = COUNTER.getAndIncrement();
+        this.title = title;
+        this.url = url;
+    }
+
+    public Article(long id, String title, String url) {
+        this.id = id;
         this.title = title;
         this.url = url;
     }
 
     public Article() {
-        this.id = COUNTER.getAndIncrement();
     }
 
-    public int getId() {
+    public Article(JsonObject json) {
+        this(
+                json.getInteger("id", -1),
+                json.getString("title"),
+                json.getString("url")
+        );
+    }
+
+    public long getId() {
         return id;
     }
 

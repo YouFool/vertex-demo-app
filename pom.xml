@@ -12,7 +12,7 @@
   <properties>
     <!-- the main class -->
     <exec.mainClass>org.jlnh.MyFirstVerticle</exec.mainClass>
-    <vertx-version>3.7.1</vertx-version>
+    <vertx-version>3.9.4</vertx-version>
   </properties>
 
   <dependencies>
